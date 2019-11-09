@@ -43,13 +43,23 @@ class App extends Component {
           error: err.message
         });
       });
-
   }
 
+setShowAddForm(show) {
+  this.setState({
+    showAddForm: show
+  });
+}
+  
   render() {
     const page = this.state.showAddForm
-          ? <AddBookmark />
-          : <BookmarkApp bookmarks={this.state.bookmarks}/>; 
+          ? <AddBookmark
+              showForm={show => this.setShowAddForm(show)}  
+            />
+          : <BookmarkApp 
+              bookmarks={this.state.bookmarks}
+              showForm={show => this.setShowAddForm(show)}
+            />; 
 
     return (
       <div className="App">

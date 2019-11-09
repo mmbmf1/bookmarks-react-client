@@ -9,7 +9,7 @@ class BookmarkApp extends Component {
       <div className="bookmarkApp">
         <h2>Bookmarks</h2>
         <BookmarkList bookmarks={this.props.bookmarks}/>
-        <Fab/>
+        <Fab showFrom={this.props.showForm}/>
       </div>
     );
   }
