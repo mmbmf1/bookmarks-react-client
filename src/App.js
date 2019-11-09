@@ -19,7 +19,7 @@ class App extends Component {
     const options = {
       method: 'GET',
       headers: {
-        "Authorization": "Bearer $2a$10$ZhdeJefcb.5sx/DCmO/n8u5sJLcARAdbHw9tfm1mevGRq3s1.5DpW",
+        "Authorization": "Bearer $2a$10$4ussyxUTmMxUO7ylOoOP5eVQSyYIQTjXY1MJBpyHmLATLSGFOirv6",
         "Content-Type": "application/json"
       }
     };
