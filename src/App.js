@@ -15,11 +15,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = 'http://localhost:8081/v3/bookmarks';
+    const url = 'https://tf-ed-bookmarks-api.herokuapp.com/v3/bookmarks';
     const options = {
       method: 'GET',
       headers: {
-        "Authorization": "Bearer $2a$10$4ussyxUTmMxUO7ylOoOP5eVQSyYIQTjXY1MJBpyHmLATLSGFOirv6",
+        "Authorization": "Bearer $2a$10$ZhdeJefcb.5sx/DCmO/n8u5sJLcARAdbHw9tfm1mevGRq3s1.5DpW",
         "Content-Type": "application/json"
       }
     };
@@ -50,11 +50,19 @@ setShowAddForm(show) {
     showAddForm: show
   });
 }
+
+addBookmark(bookmark) {
+  this.setState({
+    bookmarks:[...this.state.bookmarks, bookmark],//how does the spread operator work?
+    showAddForm: false
+  });
+}
   
   render() {
     const page = this.state.showAddForm
           ? <AddBookmark
-              showForm={show => this.setShowAddForm(show)}  
+              showForm={show => this.setShowAddForm(show)}
+              handleAdd={bookmark => this.addBookmark(bookmark)}  
             />
           : <BookmarkApp 
               bookmarks={this.state.bookmarks}
